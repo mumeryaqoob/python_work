@@ -1,0 +1,26 @@
+import matplotlib.pyplot as plt
+import numpy as np
+xwmin = int(input("Enter world coordinate x (xwmin) : "))
+ywmin = int(input("Enter world coordinate y (ywmin) : "))
+xwmax = int(input("Enter world coordinate x (xwmax) : "))
+ywmax = int(input("Enter world coordinate x (ywmax) : "))
+px = int(input("Enter point coordinate x1 (px) : "))
+py = int(input("Enter point coordinate y1 (py) : "))
+if xwmin<=px and px<=xwmax and ywmin<=py and py<=ywmax:
+    print("The point is Visible")
+    plt.subplots()
+    geometry = np.array([[xwmin,ywmin],[xwmin,ywmax],[xwmax,ywmax],[xwmax,ywmin],[xwmin,ywmin]])
+    line = np.array([[px,py]])
+    plt.plot(geometry[:,0],geometry[:,1])
+    plt.plot(line[:,0],line[:,1], 'g-o')
+    plt.title("The point is Visible")
+    plt.show()
+else:
+    print("The point is Invisible")
+    plt.subplots()
+    geometry = np.array([[xwmin,ywmin],[xwmin,ywmax],[xwmax,ywmax],[xwmax,ywmin],[xwmin,ywmin]])
+    line = np.array([[px,py]])
+    plt.plot(geometry[:,0],geometry[:,1])
+    plt.plot(line[:,0],line[:,1], 'g-o')
+    plt.title("The point is Invisible")
+    plt.show()
